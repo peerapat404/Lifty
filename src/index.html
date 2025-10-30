@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lifty</title>
+    <link rel="stylesheet" href="index.css">
+    <script defer src="js/script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+    <header class="app-header">
+        <h1 id="app-title">LIFTY</h1>
+    </header>
+
+    <nav class="nav">
+        <a href="#" class="nav-link">
+            <span class="nav-text">Home</span>   
+        </a>
+        <a href="#" class="nav-link active">
+            <span class="nav-text">Workout</span>   
+        </a>
+    </nav>
+    
+    <!-- Top tool bar for adding workout -->
+    <section class="workoutToolbar">
+        <p id="app-subtitle">Create workouts, add exercises, track sets & reps</p>
+        <input
+            id="workoutNameInt"
+            type="text"
+            placeholder="New workout name (e.g Full Body A)"/>
+        <button id="addWorkoutBtn">Add Workout</button>
+    </section>
+    <br>
+    <!-- Workouts grid/list -->
+    <section id="workoutsList" class="workouts">
+        <div id="emptyState" class="empty">
+            No workouts yet. Create one above!
+        </div>  
+    </section>
+    
+    <template id="workoutTpl">
+        <article class="workout" data-id="">
+            <!-- A single workout card -->
+            <!-- Workout Header -->
+            <header class="workout-header">
+                <div class="workout-title-wrap">
+                    <h3 class="workout-title"></h3>
+                    <p class="workout-subtitle">
+                        <span id="exerciseCount">6 Exercises</span>
+                    </p>
+                </div>
+                <div class="popUpTrigger">
+                    <button type="submit" class="popUpBtns">...</button>
+                    <div class="workout-actions">
+                        <button class="renameWorkout">Rename</button>
+                        <button class="deleteWorkout">X</button>
+                    </div>
+                </div>
+                    
+                </header>
+            </article>
+            
+        </template>
+        <!-- Templates for Workout card -->
+        
+</body>
+<!-- Add exercise row -->
+ <!-- <div class="add-exercise-row">
+    <label for="exerciseInt">Exercise Name</label>
+    <input type="text" placeholder="Add exercise"/>
+    <button type="button">Add Exercise</button>
+ </div> -->
+
+ <!-- Exercise list -->
+  <!-- <div class="exercises"></div>
+  <div class="empty">Add your first exercise to get started.</div> -->
+</html>

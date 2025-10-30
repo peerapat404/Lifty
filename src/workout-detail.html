@@ -1,0 +1,66 @@
+<!-- workout-detail.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workout Detail</title>
+  <link rel="stylesheet" href="workout-detail.css">
+  <script defer src="js/workout-detail.js"></script>
+</head>
+<body>
+
+  <header class="header">
+    <button id="backBtn" onclick="window.location.href='index.html'">&larr;</button>
+    <p class="topHeader">Routine</p>
+  </header>
+
+  <nav class="nav">
+    <a href="#" class="nav-link">
+        <span class="nav-text">Home</span>   
+    </a>
+    <a href="#" class="nav-link active">
+      <span class="nav-text">Workout</span>   
+    </a>
+  </nav>
+  
+  <div class="title">
+    <h2 id="workout-title">Upper Body</h2>
+  </div>
+  
+  <div class="addExercise">
+    <button id="addExerciseBtn" type="button">Add Exercise</button>
+  </div>
+  
+  <!-- Exercise List -->
+<div class="exercises" id="exercisesList"></div>
+
+<!-- Exercise block -->
+<template id="exerciseTpl">
+  <section class="exercise" data-id="">
+    <header class="exercise-header">
+      <div>
+        <input type="text" class="exercise-input" required/>
+      </div>
+      <div class="exercise-actions">
+        <button type="button" class="addSet">Add Set</button>
+        <button type="button" class="removeExercise">X</button>
+      </div>
+    </header>
+    
+    <table class="sets">
+      <thead>
+        <tr>
+          <td>Set</td>
+          <td>KG</td>
+          <td>Reps</td>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+</template>
+
+
+</body>
+</html>
