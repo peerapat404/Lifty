@@ -195,7 +195,7 @@ function handleExerciseClick(e) {
         tdRep.dataset.field = 'reps';
         tdRep.innerHTML = 
           `
-            <input type="number" name="repsInt" class="setInt" placeholder="kg" data-field="reps"/>
+            <input type="number" name="repsInt" class="setInt" placeholder="0" data-field="reps"/>
           `;
 
         tr.append(tdSet, tdWeight, tdRep);   
@@ -221,9 +221,13 @@ exercisesList.addEventListener('blur', (e) => {
   const exerciseId = exerciseEl.dataset.id;
 
   const exercise = workout.exercises.find(ex => ex.id === exerciseId);
+  // This ?. is called optional chaining
+  // ?. check that exercise is exist before trying to look inside it
   const setObj = exercise?.sets.find(s => s.id === setId);
 
+  // Check for the set AND know what field we're updating
   if (setObj && field) {
+    // Change the value of the chosen field to what the user typed
     setObj[field] = value;
   }
   
@@ -249,6 +253,7 @@ exercisesList.addEventListener('click', (e) => {
 
   const exercise = workout.exercises.find(ex => ex.id === exerciseId);
   const setObj = exercise?.sets.find(s => s.id === setId);
+  // if setObj exists, get the value inside it for the key stored in field
   const currentValue = (setObj?.[field] ?? '').toString();
 
   td.textContent = '';
@@ -264,7 +269,6 @@ exercisesList.addEventListener('click', (e) => {
   input.focus();
   input.select();
 });
-
 
 function persistWorkouts() {
     localStorage.setItem('workouts', JSON.stringify(workouts));
