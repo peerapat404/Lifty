@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lifty</title>
-    <link rel="stylesheet" href="../style/login.css">
-    <script defer src="../js/login.js"></script>
+    <link rel="stylesheet" href="../style/signup.css">
+    <script defer src="../js/signup.js"></script>
 </head>
 <body>
     <!-- <header class="app-header">
@@ -15,27 +15,34 @@
     <section>
         <div class="container">
             <div class="loginBox">
-                <h1>Log in</h1>
+                <h1>Sing up</h1>
             </div>
             <div class="inputsForm">
                 <input
+                    type="text"
+                    id="signupUsername"
+                    class="form-control"
+                    placeholder="Enter your username"
+                    required
+                />
+                 <input
                     type="email"
-                    id="loginEmail"
+                    id="signupEmail"
                     class="form-control"
                     placeholder="Enter your email"
                     required
                 />
                 <input
                     type="password"
-                    id="loginPassword"
+                    id="signupPassword"
                     class="form-control"
                     placeholder="Enter your password"
                     required
                 />
-                <button id="loginBtn" class="btn">Login</button>
+                <button id="signupBtn" class="btn">Sign up</button>
                 <div class="signupText">
-                    <p>Don't have an account?</p>
-                    <a href="signup.html" class="text-decoration-none" id="signupAnchor">Sign up</a>
+                    <p>Already have an account?</p>
+                    <a href="login.html" class="text-decoration-none" id="signupAnchor">Login</a>
                 </div>
             </div>
         </div>
